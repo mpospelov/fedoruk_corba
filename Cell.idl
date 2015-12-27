@@ -1,0 +1,13 @@
+module Cell {
+  interface TubeCallback {
+    void sendSMS (in string fromNum, in string message);
+    string getNum();
+    void blocked ();
+  };
+
+  interface Station {
+    void register (in TubeCallback objRef, in string phoneNum);
+    void sendSMS (in string fromNum, in string toNum, in string message);
+  };
+
+};
