@@ -7,7 +7,8 @@ module Cell {
 
   interface Station {
     void register (in TubeCallback objRef, in string phoneNum);
-    void sendSMS (in string fromNum, in string toNum, in string message);
+    long registerStation(in Station objRef, in string stationName);
+    void sendSMS (in string fromNum, in string toNum, in string message, in string ttl);
   };
 
 };

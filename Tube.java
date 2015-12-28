@@ -76,7 +76,7 @@ public class Tube
             NamingContext ncRef = NamingContextHelper.narrow(objRef);
 
             // Преобразование имени базовой станции в объектную ссылку
-            NameComponent nc = new NameComponent("BaseStation", "");
+            NameComponent nc = new NameComponent(args[5], "");
             NameComponent path[] = {nc};
             Station stationRef = StationHelper.narrow(ncRef.resolve(path));
 
@@ -101,7 +101,7 @@ public class Tube
                 System.out.println("Tube-"+myNum+": error - there is no address in your message!");
                 continue;
               }
-              stationRef.sendSMS(myNum, msg.substring(0, delimitterIndex), msg.substring(delimitterIndex+1));
+              stationRef.sendSMS(myNum, msg.substring(0, delimitterIndex), msg.substring(delimitterIndex+1), "64");
             }
           }
           catch (Exception e)

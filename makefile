@@ -8,6 +8,8 @@ compile:
 run_orb:
 	orbd -ORBInitialPort 1050 -ORBInitialHost localhost
 run_server:
-	java StationServer -ORBInitialPort 1050 -ORBInitialHost localhost
+	java StationServer -ORBInitialPort 1050 -ORBInitialHost localhost BaseStation
+run_server2:
+	java StationServer -ORBInitialPort 1050 -ORBInitialHost localhost BaseStation2 BaseStation
 run_client:
-	java Tube -ORBInitialPort 1050 -ORBInitialHost localhost ${PHONE_NUMBER}
+	java Tube -ORBInitialPort 1050 -ORBInitialHost localhost ${PHONE_NUMBER} ${SERVER}
