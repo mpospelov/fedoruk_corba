@@ -36,6 +36,7 @@ public class StationServer {
         NameComponent path1[] = {nc};
         Station stationRef = StationHelper.narrow(ncRef.resolve(path1));
         stationRef.registerStation(sref, name);
+        sref.setStation(stationRef, neighbor_name);
       }
 
       // Ожидание обращений от клиентов (трубок)
@@ -64,6 +65,12 @@ class StationServant extends StationPOA
     hm_money.put(phoneNum, "50");
 
     System.out.println("Server: find phone " + phoneNum);
+  }
+
+  public int setStation(Station stationRef, String name) {
+    nStationReference = stationRef;
+    nStationName = name;
+    return 0;
   }
 
   public int registerStation(Station objRef, String phoneNum)
